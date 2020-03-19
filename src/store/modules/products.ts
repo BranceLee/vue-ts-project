@@ -58,7 +58,7 @@ class Cart extends VuexModule implements ProductCartImpl {
 
   @Action
   async getProducts() {
-    const { data } = await new Promise((resolve, reject) => {
+    const { data } = await new Promise(resolve => {
       setTimeout(() => {
         resolve({
           data: cartData

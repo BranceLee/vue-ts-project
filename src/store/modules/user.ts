@@ -24,8 +24,7 @@ class User extends VuexModule implements UserStateImpl {
   }
 
   @Action
-  public async Login(userInfo: { userName: string }) {
-    const { userName } = userInfo;
+  public async Login() {
     const data: UserStateImpl = await new Promise(resolve => {
       return setTimeout(() => {
         resolve({ token: 'admin', userId: '1' });
