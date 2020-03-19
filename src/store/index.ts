@@ -1,11 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { UserState } from './modules/user';
+import { UserStateImpl } from './modules/user';
+import { ProductCartImpl } from './modules/products';
 
 Vue.use(Vuex);
 
 export interface RootState {
-  user: UserState;
+  user: UserStateImpl;
+  cart: ProductCartImpl;
 }
 
 export default new Vuex.Store<RootState>({});

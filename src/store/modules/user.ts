@@ -7,18 +7,18 @@ import {
 } from 'vuex-module-decorators';
 import store from '../index';
 
-export interface UserState {
+export interface UserStateImpl {
   token: string;
   userId: string;
 }
 
 @Module({ dynamic: true, store, name: 'user' })
-class User extends VuexModule implements UserState {
+class User extends VuexModule implements UserStateImpl {
   public token = '';
   public userId = '';
 
   @Mutation
-  private SET_USER(data: UserState) {
+  private SET_USER(data: UserStateImpl) {
     this.token = data.token;
     this.userId = data.userId;
   }
@@ -26,7 +26,7 @@ class User extends VuexModule implements UserState {
   @Action
   public async Login(userInfo: { userName: string }) {
     const { userName } = userInfo;
-    const data: UserState = await new Promise(resolve => {
+    const data: UserStateImpl = await new Promise(resolve => {
       return setTimeout(() => {
         resolve({ token: 'admin', userId: '1' });
       }, 1000);
