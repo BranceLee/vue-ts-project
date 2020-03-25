@@ -30,7 +30,7 @@ yarn test:unit
 yarn test:e2e
 ```
 
-### Lints and fixes files
+### Lints and fixes files 
 
 ```
 yarn lint
@@ -38,4 +38,4 @@ yarn lint
 
 ### Customize configuration
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See  [Configuration Reference](https://cli.vuejs.org/config/).
